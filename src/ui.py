@@ -2,7 +2,6 @@ import tkinter as tk
 from quiz_brain import QuizBrain
 
 THEME_COLOR = "#4d4d00"
-# THEME_COLOR = "#375362"
 
 
 class QuizUI():
