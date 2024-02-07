@@ -1,7 +1,8 @@
 import tkinter as tk
 from quiz_brain import QuizBrain
 
-THEME_COLOR = "#375362"
+THEME_COLOR = "#4d4d00"
+# THEME_COLOR = "#375362"
 
 
 class QuizUI():
@@ -12,7 +13,7 @@ class QuizUI():
         # window settings
         self.window = tk.Tk()
         self.window.title("Quizzler")
-        self.window.config(padx=20, pady=20, bg=THEME_COLOR)
+        self.window.config(padx=50, pady=50, bg=THEME_COLOR)
 
         # Score label
         self.score_label = tk.Label(text="Score: 0",
@@ -21,10 +22,10 @@ class QuizUI():
         self.score_label.grid(row=0, column=1)
 
         # Canvas
-        self.canvas = tk.Canvas(width=300, height=250, bg="white",
+        self.canvas = tk.Canvas(width=400, height=250, bg="white",
                                 highlightbackground="white")
-        self.question_text = self.canvas.create_text(150, 125, width=280, font=(
-            "Arial", 18, "italic"), fill=THEME_COLOR)
+        self.question_text = self.canvas.create_text(200, 125, width=340, font=(
+            "Arial", 18, "italic"), fill="black")
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
 
         # Buttons
@@ -61,4 +62,4 @@ class QuizUI():
             self.canvas.config(bg="green")
         else:
             self.canvas.config(bg="red")
-        self.window.after(1000, self.next_question)
+        self.window.after(500, self.next_question)
